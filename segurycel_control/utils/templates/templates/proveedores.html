@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proveedores</title>
+</head>
+<body>
+    <h1>Lista de Proveedores</h1>
+    <form method="POST" action="/nuevo_proveedor">
+        <input type="text" name="nombre" placeholder="Nombre proveedor" required>
+        <input type="text" name="rut" placeholder="RUT" required>
+        <button type="submit">Agregar</button>
+    </form>
+    <ul>
+        {% for p in proveedores %}
+            <li>{{ p.nombre }} - {{ p.rut }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Volver</a>
+</body>
+</html>

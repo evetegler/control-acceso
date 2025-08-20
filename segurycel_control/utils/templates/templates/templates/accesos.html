@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Historial de Accesos</title>
+</head>
+<body>
+    <h1>Historial de accesos</h1>
+    <ul>
+        {% for a in accesos %}
+            <li>{{ a.fecha }} | {{ a.patente }} | {{ a.rut_empresa }} | {{ a.observacion }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Volver</a>
+</body>
+</html>

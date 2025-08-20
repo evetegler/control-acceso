@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Segurycel - Control de Acceso</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Control de Acceso - Segurycel</h1>
+
+   <form method="POST" action="/buscar">
+    <input type="text" name="dato" placeholder="Ingrese patente o RUT" required>
+    <button type="submit">Buscar</button>
+</form>
+
+<form method="POST" action="/registrar_acceso">
+    <input type="text" name="patente" placeholder="Patente" required>
+    <input type="text" name="rut_empresa" placeholder="RUT Empresa">
+    <input type="text" name="observacion" placeholder="Observación">
+    <button type="submit">Registrar</button>
+</form>
+    <h2>Accesos Recientes</h2>
+    <ul>
+        {% for acceso in accesos %}
+            <li>{{ acceso.fecha }} | {{ acceso.patente }} | {{ acceso.rut_empresa }} | {{ acceso.observacion }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Proveedores</h2>
+    <ul>
+        {% for proveedor in proveedores %}
+            <li>{{ proveedor.nombre }} - {{ proveedor.rut }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/accesos">Historial de Accesos</a> |
+    <a href="/proveedores">Lista de Proveedores</a>
+    <a href="/">Volver</a>
+</body>
+</html> 
