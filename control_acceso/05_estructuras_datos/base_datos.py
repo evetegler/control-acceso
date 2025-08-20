@@ -21,6 +21,7 @@ def normalizar(s: str) -> str:
     return s.replace("-", "").replace(" ", "").upper()
 
 def menu():
+    # base_datos.py
     print("\n=== Base de Datos (Memoria + Persistencia) ===")
     print("1) Agregar/Actualizar acceso")
     print("2) Buscar acceso por patente")
